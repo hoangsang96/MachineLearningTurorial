@@ -2,12 +2,18 @@ from __future__ import division, print_function, unicode_literals
 import numpy as np 
 import matplotlib
 import matplotlib.pyplot as plt
-
+import pandas
 import random
 random.seed(2)
 
-X = np.random.rand(1000, 1)
-y = 4 + 3 * X + .2*np.random.randn(1000, 1) # noise added
+df = pandas.read_excel('data.xlsx')
+data = df.as_matrix();
+
+X = data[:, 0:1]
+y = data[:, 1:2]
+
+# X = np.random.rand(1000, 1)
+# y = 4 + 3 * X + .2*np.random.randn(1000, 1) # noise added
 
 #building Xbar
 one = np.ones((X.shape[0], 1))
@@ -72,4 +78,5 @@ def myGD(w_init, eta):
 
 w_init = np.array([[2], [1]])
 (w1, it ) = myGD(w_init, 1)
+print(w1)
 print('Solution found by GD : w = ', w1[-1].T, '\nAfter %d iterations.' %(it+1))
