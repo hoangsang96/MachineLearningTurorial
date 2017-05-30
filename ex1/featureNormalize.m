@@ -23,16 +23,14 @@ sigma = zeros(1, size(X, 2));
 %               to perform the normalization separately for 
 %               each feature. 
 %
-   mu = mean(X);
-   sigma = std(X);
-   
-   indicies = 1:size(X, 2);
-   
-   for i = 1:indicies
-     XminusMu = X(:, i) - mu(i);
-     X_norm(:, i) = XminusMu / sigma(i);
-   end
-   
+mu = mean(X_norm);
+sigma = std(X_norm);
+
+tf_mu = X_norm - repmat(mu,length(X_norm),1);
+tf_std = repmat(sigma,length(X_norm),1);
+
+X_norm = tf_mu ./ tf_std;
+
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
