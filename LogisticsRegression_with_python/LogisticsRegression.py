@@ -11,6 +11,8 @@ y = np.array([0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1])
 # extened data 
 X = np.concatenate((np.ones((1, X.shape[1])), X), axis = 0)
 
+print(X)
+
 def sigmoid(s):
 	return 1/(1 + np.exp(-s))
 
