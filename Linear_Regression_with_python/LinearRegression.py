@@ -32,9 +32,9 @@ x0 = np.linspace(145, 185, 2)
 y0 = w_0 + w_1*x0
 plt.plot(x0, y0, hold=True)
 
-plt.show()
+# plt.show()
 y1 = w_1*155 + w_0
 y2 = w_1*160 + w_0
-
-print( u'Predict weight of person with height 155 cm: %.2f (kg), real number: 52 (kg)'  %(y1) )
-print( u'Predict weight of person with height 160 cm: %.2f (kg), real number: 56 (kg)'  %(y2) )
+print(w_1, " ", w_0)
+print( 'Predict weight of person with height 155 cm: %.2f (kg), real number: 52 (kg)'  %(y1) )
+print( 'Predict weight of person with height 160 cm: %.2f (kg), real number: 56 (kg)'  %(y2) )
