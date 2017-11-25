@@ -1,0 +1,8 @@
+Ưu và nhược điểm của KNN
+- Ưu điểm:
+    + Độ phức tạp của thuật toán trong quá trình training = 0.
+    + Việc dự đoán của dữ liệu mới rất đơn giản.
+    + Không cần giả sử gì về phân phối của các class.
+- Nhược điểm:
+    + Rất nhạy cảm với nhiễu khi K nhỏ.
+    + KNN là một thuật toán mà mọi tính toán đều nằm ở khâu test. Trong đó việc tính khoảng cách tới từng điểm dữ liệu trong training set sẽ   tốn rất nhiều thời gian, đặc biệt là với các cơ sở dữ liệu có số chiều lớn và có nhiều điểm dữ liệu. Với K càng lớn thì độ phức tạp cũng sẽ tăng lên. Ngoài ra, việc lưu toàn bộ dữ liệu trong bộ nhớ cũng ảnh hưởng tới hiệu năng của KNN.
